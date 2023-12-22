@@ -1,0 +1,31 @@
+{
+  "name": "app_web__llm-chat",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A Typescript Web Application for chatting with LLMs",
+  "license": "BSD-3-Clause",
+  "author": "Dávid J. Zarándi",
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10.1.0"
+  },
+  "scripts": {
+    "benchmark": "node --env-file=.env dist/benchmark.js",
+    "build": "npm run clean && tsc",
+    "start": "node --env-file=.env dist/index.js",
+    "test": "npm run build && node --test dist/**/*.test.js",
+    "sonar": "sonarlint --src 'src/**/*.ts'",
+    "format": "prettier --write .",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "langchain": "^0.0.211"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "sonarlint": "^1.1.0",
+    "typescript": "^5.2.2"
+  }
+}
