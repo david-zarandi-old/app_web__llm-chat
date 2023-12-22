@@ -2,14 +2,16 @@ const esbuild = require("esbuild");
 const { solidPlugin } = require("esbuild-plugin-solid");
 
 (async () => {
-  let ctx = await esbuild.context({
-    entryPoints: ["src/main.tsx"],
-    outdir: "www/js",
+  const ctx = await esbuild.context({
+    entryPoints: ["src/tsx/main.tsx", "src/css/main.css"],
+    entryNames: "[ext]/[name]",
+    outdir: "www",
     bundle: true,
     sourcemap: true,
-    inject: ["src/hmr.js"],
+    logLevel: "info",
     target: ["chrome120", "firefox120"],
     plugins: [solidPlugin()],
+    inject: ["src/hmr.js"],
   });
 
   await ctx.watch();

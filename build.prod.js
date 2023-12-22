@@ -3,10 +3,12 @@ const { solidPlugin } = require("esbuild-plugin-solid");
 
 (async () => {
   await esbuild.build({
-    entryPoints: ["app.jsx"],
+    entryPoints: ["src/tsx/main.tsx", "src/css/main.css"],
+    entryNames: "[ext]/[name]",
+    outdir: "www",
     bundle: true,
     minify: true,
-    outdir: "www/js",
+    logLevel: "error",
     target: ["chrome120", "firefox120"],
     plugins: [solidPlugin()],
   });
