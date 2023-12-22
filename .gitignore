@@ -1,4 +1,6 @@
 node_modules
-dist
+www/js
+www/css
 .idea
 .env
+.env.dev
