@@ -1,0 +1,22 @@
+.chat-header {
+  min-height: 5svh;
+}
+
+.chat-content {
+  height: calc(80vh - var(--padding-inline));
+  padding-bottom: var(--padding-inline);
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 5ch 1fr;
+  grid-template-rows: fit-content(1ch);
+}
+
+.chat-footer {
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 5ch;
+
+  & > textarea {
+    resize: none;
+  }
+}

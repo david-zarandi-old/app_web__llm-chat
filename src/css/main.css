@@ -1,7 +1,8 @@
 @import "./variables.css";
 @import "./content-grid.css";
+@import "./chat.css";
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-family);
   font-weight: 300;
 }

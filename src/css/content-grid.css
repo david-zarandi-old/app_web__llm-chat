@@ -10,12 +10,12 @@
     var(--padding-size) [breakout-start] var(--breakout-size)
     [content-start] var(--content-size) [content-end]
     var(--breakout-size) [breakout-end] var(--padding-size);
-}
 
-.content-grid > .content {
-  grid-column: content;
-}
+  & > .content {
+    grid-column: content;
+  }
 
-.content-grid > .breakout {
-  grid-column: breakout;
+  & > .breakout {
+    grid-column: breakout;
+  }
 }
