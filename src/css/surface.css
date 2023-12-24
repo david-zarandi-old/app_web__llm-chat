@@ -1,0 +1,56 @@
+:root {
+  --theme-hue: 220;
+  --theme-saturation: 30%;
+}
+
+@media (prefers-color-scheme: light) {
+  .-surface-2 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 99%);
+  }
+
+  .-surface-1 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 95%);
+  }
+
+  .surface {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 90%);
+  }
+
+  .surface-1 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 85%);
+  }
+
+  .surface-2 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 80%);
+  }
+
+  .-surface-2, .-surface-1, .surface, .surface-1, .surface-2 {
+    color: hsl(var(--theme-hue), var(--theme-saturation), 5%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .-surface-2 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 1%);
+  }
+
+  .-surface-1 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 5%);
+  }
+
+  .surface {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 10%);
+  }
+
+  .surface-1 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 15%);
+  }
+
+  .surface-2 {
+    background: hsl(var(--theme-hue), var(--theme-saturation), 20%);
+  }
+
+  .-surface-2, .-surface-1, .surface, .surface-1, .surface-2 {
+    color: hsl(var(--theme-hue), var(--theme-saturation), 95%);
+  }
+}

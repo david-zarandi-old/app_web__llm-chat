@@ -1,20 +1,27 @@
+@import "variables.css";
+
 .chat-header {
-  min-height: 5svh;
+  min-height: calc(5svh - var(--margin-inline));
+  margin-bottom: var(--margin-inline);
 }
 
 .chat-content {
-  height: calc(80vh - var(--padding-inline));
-  padding-bottom: var(--padding-inline);
+  height: calc(85svh - var(--padding-inline) - var(--margin-inline));
+  margin-bottom: var(--margin-inline);
+
   overflow-y: scroll;
+
   display: grid;
   grid-template-columns: 5ch 1fr;
   grid-template-rows: fit-content(1ch);
 }
 
 .chat-footer {
-  min-height: 10vh;
+  min-height: 10svh;
+
   display: grid;
-  grid-template-columns: 1fr 5ch;
+  grid-template-columns: 1fr 10ch;
+  gap: 2ch;
 
   & > textarea {
     resize: none;

@@ -1,8 +1,10 @@
-@import "./variables.css";
-@import "./content-grid.css";
-@import "./chat.css";
+@import "variables.css";
+@import "surface.css";
+@import "content-grid.css";
+@import "chat.css";
 
 body {
+  color-scheme: light dark;
   font-family: var(--font-family);
   font-weight: 300;
 }
