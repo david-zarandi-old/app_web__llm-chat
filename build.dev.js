@@ -18,5 +18,6 @@ const { solidPlugin } = require("esbuild-plugin-solid");
   await ctx.serve({
     servedir: "www",
     port: 8080,
+    fallback: "www/index.html",
   });
 })().catch(() => process.exit(1));

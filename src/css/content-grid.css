@@ -1,21 +1,65 @@
 @import "variables.css";
 
 .content-grid {
-  --padding-size: minmax(var(--padding-inline), 1fr);
-  --content-size: min(100% - (var(--padding-inline) * 2), var(--content-max-width));
-  --breakout-size: minmax(0, calc((var(--breakout-max-width) - var(--content-size)) / 2));
+  --main-content-header-size: 5ch;
 
   display: grid;
-  grid-template-columns:
-    var(--padding-size) [breakout-start] var(--breakout-size)
-    [content-start] var(--content-size) [content-end]
-    var(--breakout-size) [breakout-end] var(--padding-size);
+  grid-template-columns: [sidebar] 1fr [main-content] 3fr;
+  grid-template-rows: calc(100svh - 2 * var(--margin-inline));
 
-  & > .content {
-    grid-column: content;
+  & > .sidebar {
+    grid-column: sidebar;
   }
 
-  & > .breakout {
-    grid-column: breakout;
+  & > .main-content {
+    grid-column: main-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      [full-height-start header] var(--main-content-header-size)
+      [content] 1fr
+      [footer] 15ch
+      [full-height-end];
+
+    & > .full-height {
+      grid-row: full-height;
+    }
+
+    & > .header {
+      grid-row: header;
+    }
+
+    & > .content {
+      grid-row: content;
+    }
+
+    & > .footer {
+      grid-row: footer;
+    }
+  }
+
+  @media (width >= 1080px) {
+    & > .main-content > .header > .sidebar-toggle {
+      display: none;
+    }
+  }
+
+  @media (width < 1080px) {
+    & {
+      position: relative;
+      grid-template-columns: [main-content] 1fr;
+    }
+
+    & > .sidebar {
+      position: absolute;
+      top: var(--main-content-header-size);
+      grid-column: main-content;
+      width: calc(100svw - 2 * var(--margin-inline));
+      height: calc(100svh - var(--main-content-header-size) - 2 * var(--margin-inline));
+
+      &[data-is-open="false"] {
+        display: none;
+      }
+    }
   }
 }

@@ -18,6 +18,7 @@
     "clean": "rimraf www/js www/css"
   },
   "dependencies": {
+    "@solidjs/router": "^0.10.5",
     "langchain": "^0.0.211",
     "solid-js": "^1.8.7"
   },

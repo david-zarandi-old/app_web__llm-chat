@@ -1,10 +1,10 @@
 @import "variables.css";
 @import "surface.css";
 @import "content-grid.css";
-@import "chat.css";
 
 body {
   color-scheme: light dark;
+  margin: var(--margin-inline);
   font-family: var(--font-family);
   font-weight: 300;
 }

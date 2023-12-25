@@ -1,19 +1,16 @@
 import { render } from "solid-js/web";
+import { lazy } from "solid-js";
+import { Route, Router } from "@solidjs/router";
 
-function HelloWorld() {
-  return (
-    <>
-      <div class="breakout chat-header">chat name</div>
-      <div class="content chat-content">
-        <span>img</span>
-        <span>chat text</span>
-      </div>
-      <div class="breakout chat-footer">
-        <textarea />
-        <button>send</button>
-      </div>
-    </>
-  );
-}
+const Landing = lazy(() => import("./pages/landing"));
+const Chat = lazy(() => import("./pages/chat"));
 
-render(() => <HelloWorld />, document.getElementById("app"));
+render(
+  () => (
+    <Router>
+      <Route path="/chat" component={Chat} />
+      <Route path="/" component={Landing} />
+    </Router>
+  ),
+  document.getElementById("app"),
+);
