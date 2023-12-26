@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "app_web__llm-chat",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A Typescript Web Application for chatting with LLMs",
   "license": "BSD-3-Clause",
   "author": "Dávid J. Zarándi",

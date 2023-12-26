@@ -1,8 +1,8 @@
 :root {
   --font-family: system-ui, sans-serif;
 
-  --padding-inline: 5ch;
-  --margin-inline: 1ch;
+  --padding-inline: 1ch;
+  --margin-inline: var(--padding-inline);
 
   --border-width: 0.2ch;
   --border-radius: 0.8ch;
