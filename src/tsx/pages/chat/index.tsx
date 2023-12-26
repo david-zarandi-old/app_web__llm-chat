@@ -2,6 +2,7 @@ import { createSignal } from "solid-js";
 import { A } from "@solidjs/router";
 import { LeftPanelOpenIcon } from "../../icons/left-panel-open";
 import { LeftPanelCloseIcon } from "../../icons/left-panel-close";
+import { SendIcon } from "../../icons/send";
 
 const Chat = () => {
   const [isSidePanelCollapsed, setSidePanelCollapsion] = createSignal(false);
@@ -14,13 +15,13 @@ const Chat = () => {
     >
       <div class="surface side-panel">
         <header class="header">
-          <button class="full-width">New chat</button>
+          <div class="full-width">
+            <button class="outlined">New chat</button>
+          </div>
         </header>
         <menu class="main">
           {new Array(50).fill("").map((_, index) => (
-            <li class="full-width">
-              <button>Chat {index}</button>
-            </li>
+            <button class="full-width text">Chat {index}</button>
           ))}
         </menu>
         <footer class="footer menu">
@@ -31,16 +32,19 @@ const Chat = () => {
       </div>
       <div class="main-panel">
         <header class="header">
-          <button
-            onClick={() => setSidePanelCollapsion((prevState) => !prevState)}
-          >
-            {isSidePanelCollapsed() ? (
-              <LeftPanelCloseIcon />
-            ) : (
-              <LeftPanelOpenIcon />
-            )}
-          </button>
-          <span>Chat name</span>
+          <div>
+            <button
+              class="icon"
+              onClick={() => setSidePanelCollapsion((prevState) => !prevState)}
+            >
+              {isSidePanelCollapsed() ? (
+                <LeftPanelCloseIcon />
+              ) : (
+                <LeftPanelOpenIcon />
+              )}
+            </button>
+          </div>
+          <h3>Chat name</h3>
         </header>
         <ol class="main">
           {new Array(50).fill("").map((_, index) => (
@@ -48,8 +52,12 @@ const Chat = () => {
           ))}
         </ol>
         <footer class="footer chat">
-          <textarea class="message-input"></textarea>
-          <button class="send-button">Send</button>
+          <div>
+            <textarea></textarea>
+            <button class="icon">
+              <SendIcon />
+            </button>
+          </div>
         </footer>
       </div>
     </main>

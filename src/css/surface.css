@@ -1,7 +1,4 @@
-:root {
-  --theme-hue: 220;
-  --theme-saturation: 30%;
-}
+@import "variables.css";
 
 @media (prefers-color-scheme: light) {
   .-surface-2 {

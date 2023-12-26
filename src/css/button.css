@@ -1,0 +1,103 @@
+@import "variables.css";
+
+button {
+  text-align: center;
+  line-height: 1rem;
+
+  @media (prefers-color-scheme: light) {
+    &.filled, &.icon-filled {
+      background: hsl(var(--theme-hue), var(--theme-saturation), 10%);
+      color: hsl(var(--theme-hue), var(--theme-saturation), 90%);
+
+      &:hover {
+        background: hsl(var(--theme-hue), var(--theme-saturation), 20%);
+      }
+
+      &:active {
+        background: hsl(var(--theme-hue), var(--theme-saturation), 30%);
+      }
+    }
+
+    &.outlined, &.icon-outlined {
+      border: var(--border-width) solid hsl(var(--theme-hue), var(--theme-saturation), 10%);
+    }
+
+    &.text, &.outlined, &.icon, &.icon-outlined {
+      color: hsl(var(--theme-hue), var(--theme-saturation), 10%);
+
+      &:hover {
+        background: hsla(0, 0%, 0%, 10%);
+      }
+
+      &:active {
+        background: hsla(0, 0%, 0%, 20%);
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &.filled, &.icon-filled {
+      background: hsl(var(--theme-hue), var(--theme-saturation), 90%);
+      color: hsl(var(--theme-hue), var(--theme-saturation), 10%);
+
+      &:hover {
+        background: hsl(var(--theme-hue), var(--theme-saturation), 80%);
+      }
+
+      &:active {
+        background: hsl(var(--theme-hue), var(--theme-saturation), 70%);
+      }
+    }
+
+    &.outlined, &.icon-outlined {
+      border: var(--border-width) solid hsl(var(--theme-hue), var(--theme-saturation), 90%);
+    }
+
+    &.text, &.outlined, &.icon, &.icon-outlined {
+      color: hsl(var(--theme-hue), var(--theme-saturation), 90%);
+
+      &:hover {
+        background: hsla(0, 0%, 100%, 10%);
+      }
+
+      &:active {
+        background: hsla(0, 0%, 100%, 20%);
+      }
+    }
+  }
+
+  &.filled, &.text {
+    padding: 1.5ch 3ch;
+  }
+
+  &.filled, &.text, &.outlined {
+    font-size: 0.85rem;
+    border-radius: var(--border-radius);
+  }
+
+  &.icon-filled, &.icon, &.icon-outlined {
+    --icon-size: 3.15ch;
+    --padding: 1ch;
+    height: calc(var(--icon-size) + 2 * var(--padding));
+    width: calc(var(--icon-size) + 2 * var(--padding));
+    padding: var(--padding);
+    border-radius: 100%;
+
+    & > svg {
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+  }
+
+  &.filled, &.text, &.icon-filled, &.icon {
+    border: unset;
+  }
+
+  &.text, &.outlined, &.icon, &.icon-outlined {
+    background: transparent;
+  }
+
+  &.outlined {
+    padding: calc(1.5ch - var(--border-width)) calc(3ch - var(--border-width));
+  }
+}

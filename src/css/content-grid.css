@@ -30,6 +30,7 @@
   & > .main-panel {
     display: grid;
     grid-template-rows: [full-height-start header] 5ch [main] 1fr [footer] 10ch [full-height-end];
+    grid-row-gap: var(--padding-inline);
 
     & > .full-height {
       grid-row: full-height;
@@ -38,8 +39,13 @@
     & > .header {
       grid-row: header;
       display: grid;
-      grid-template-columns: [full-width-start] 5ch 1fr [full-width-end];
+      grid-template-columns: [full-width-start] fit-content(1ch) 1fr [full-width-end];
       grid-auto-rows: 5ch;
+
+      & > * {
+        text-align: center;
+        align-self: center;
+      }
 
       & > .full-width {
         grid-column: full-width;
@@ -56,6 +62,7 @@
       &:is(ol), &:is(menu) {
         list-style: none;
         padding: 0;
+        margin: 0;
       }
 
       & > .full-width {
@@ -72,8 +79,12 @@
       display: grid;
 
       &.chat {
-        grid-template-columns: [full-width-start] 1fr 10ch [full-width-end];
-        grid-column-gap: var(--padding-inline);
+        /*grid-template-columns: [full-width-start] 1fr 10ch [full-width-end];*/
+        /*grid-column-gap: var(--padding-inline);*/
+
+        /*& > textarea {*/
+        /*  resize: none;*/
+        /*}*/
       }
 
       &.menu {
